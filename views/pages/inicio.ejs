@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <% flash.get('mensaje').forEach(function (msg) { %>
+    <div class="alert alert-info text-center" role="alert">
+      <%=msg%>
+    </div>
+    <% }) %>
+
+    <div class="jumbotron text-white">
+      <h1>
+        Bienvenido!
+      </h1>
+      <p>
+        En este sitio podrás comprar tus fotos preferidas...
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% fotos.forEach( foto => { %>
+  <div class="col-md-3 my-2">
+    <div class="card">
+      <h5 class="card-header bg-info text-white">
+        <%=foto.titulo%>
+      </h5>
+      <div class="card-body">
+        <p class="card-text">
+          <img src="/images/fotos/<%=foto.contenido%>" alt="" class="w-100">
+        </p>
+      </div>
+      <% if (session && session.cliente) {%>
+      <div class="card-footer text-center">
+        <a href="/agregar-carro-compra/<%=foto.id%>"><i class="fas fa-cart-plus px-3"></i></a>
+        <a href="/agregar-lista-deseo/<%=foto.id%>"><i class="fas fa-list-ul px-3"></i></a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <% }) %>
+</div>

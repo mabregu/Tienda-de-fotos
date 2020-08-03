@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <% flash.get('mensaje').forEach(function (msg) { %>
+    <div class="alert alert-info text-center" role="alert">
+      <%=msg%>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<div class="row">
+  <% let contador = 1 %>
+  <% fotos.forEach( foto => { %>
+  <div class="col-md-4 my-2"></div>
+  <div class="col-md-4 my-2">
+    <div class="card">
+      <h5 class="card-header bg-info text-white">
+        <%=foto.titulo%>
+      </h5>
+      <div class="card-body">
+        <p class="card-text">
+          <img src="images/fotos/<%=foto.contenido%>" alt="" class="w-100">
+        </p>
+      </div>
+      <div class="card-footer text-center">
+        # <%=contador++%>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 my-2"></div>
+  <% }) %>
+</div>
