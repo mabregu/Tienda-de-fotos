@@ -275,9 +275,6 @@ module.exports = {
     // ||   set sensitive credentials like this using an environment variable.
     //
     // For example:
-    // ```
-    // sails_sockets__url=redis://admin:myc00lpAssw2D@bigsquid.redistogo.com:9562/0
-    // ```
     //--------------------------------------------------------------------------
 
   },
